@@ -1,3 +1,4 @@
+from datetime import date, datetime
 import bcrypt
 from flask import Flask, render_template, redirect, session, flash, request
 from flask_app import app
@@ -63,5 +64,6 @@ def dashboard():
 
     user = User.get_by_id(data)
     recipes = Recipe.getAll()
+    hour="2022-08-03 8:00:00"
 
-    return render_template("dashboard.html", user=user, recipes=recipes)
+    return render_template("dashboard.html", user=user, recipes=recipes,hour=hour)
